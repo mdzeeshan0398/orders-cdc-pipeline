@@ -44,7 +44,7 @@ flowchart LR
 
 ## Run it
 
-Requires Docker with Compose.
+Requires Docker with Compose and about 8 GB of free RAM. On Windows, install Docker Desktop (WSL 2 backend).
 
 ```bash
 docker compose up -d --build
@@ -56,7 +56,7 @@ docker compose up -d --build
 | `kafka` | single-node KRaft broker, topic `orders.cdc` |
 | `producer` | generates ~5 order events/second |
 | `spark-stream` | streaming job (`pipeline/spark_stream.py`) |
-| `airflow` | UI at http://localhost:8080 — user `admin`, password printed in `docker compose logs airflow` |
+| `airflow` | UI at http://localhost:8080 — user `admin`, password from `docker compose exec airflow cat /opt/airflow/standalone_admin_password.txt` |
 
 In Airflow, un-pause **`orders_incremental_load`**.
 
