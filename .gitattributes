@@ -1,0 +1,2 @@
+# Keep Linux line endings so scripts run inside containers when cloned on Windows
+* text=auto eol=lf
